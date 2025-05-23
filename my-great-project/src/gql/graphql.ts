@@ -3075,6 +3075,7 @@ export type JustForTestingBlock_linkArgs = {
 export type JustForTestingBlockAutocomplete = {
   __typename?: 'JustForTestingBlockAutocomplete';
   Blurp?: Maybe<RichTextAutocomplete>;
+  MyTest?: Maybe<RichTextAutocomplete>;
   CTA?: Maybe<ContentUrlAutocomplete>;
   Description?: Maybe<RichTextAutocomplete>;
   _metadata?: Maybe<IContentMetadataAutocomplete>;
@@ -3083,6 +3084,7 @@ export type JustForTestingBlockAutocomplete = {
 export type JustForTestingBlockFacet = {
   __typename?: 'JustForTestingBlockFacet';
   Blurp?: Maybe<RichTextFacet>;
+  MyTest?: Maybe<RichTextFacet>;
   CTA?: Maybe<ContentUrlFacet>;
   Description?: Maybe<RichTextFacet>;
   _metadata?: Maybe<IContentMetadataFacet>;
@@ -3090,6 +3092,7 @@ export type JustForTestingBlockFacet = {
 
 export type JustForTestingBlockOrderByInput = {
   Blurp?: InputMaybe<RichTextOrderByInput>;
+  MyTest?: InputMaybe<RichTextOrderByInput>;
   CTA?: InputMaybe<ContentUrlOrderByInput>;
   Description?: InputMaybe<RichTextOrderByInput>;
   _metadata?: InputMaybe<IContentMetadataOrderByInput>;
@@ -3117,6 +3120,7 @@ export type JustForTestingBlockOutputtotalArgs = {
 
 export type JustForTestingBlockWhereInput = {
   Blurp?: InputMaybe<RichTextWhereInput>;
+  MyTest?: InputMaybe<RichTextWhereInput>;
   CTA?: InputMaybe<ContentUrlWhereInput>;
   Description?: InputMaybe<RichTextWhereInput>;
   _and?: InputMaybe<Array<InputMaybe<JustForTestingBlockWhereInput>>>;
