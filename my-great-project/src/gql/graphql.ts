@@ -1955,6 +1955,8 @@ export type MegaMenuGroupBlockWhereInput = {
 
 export type MyStandardPage = IData & _IContent & _IPage & {
   __typename?: 'MyStandardPage';
+  Burlp?: Maybe<RichText>;
+  Header?: Maybe<Scalars['String']['output']>;
   /** @deprecated Use `_link` field instead */
   _children?: Maybe<QueryRef>;
   _deleted?: Maybe<Scalars['Bool']['output']>;
@@ -1978,15 +1980,18 @@ export type MyStandardPage_linkArgs = {
 
 export type MyStandardPageAutocomplete = {
   __typename?: 'MyStandardPageAutocomplete';
+  Burlp?: Maybe<RichTextAutocomplete>;
   _metadata?: Maybe<IContentMetadataAutocomplete>;
 };
 
 export type MyStandardPageFacet = {
   __typename?: 'MyStandardPageFacet';
+  Burlp?: Maybe<RichTextFacet>;
   _metadata?: Maybe<IContentMetadataFacet>;
 };
 
 export type MyStandardPageOrderByInput = {
+  Burlp?: InputMaybe<RichTextOrderByInput>;
   _metadata?: InputMaybe<IContentMetadataOrderByInput>;
   _minimumScore?: InputMaybe<Scalars['Float']['input']>;
   _modified?: InputMaybe<OrderBy>;
@@ -2011,6 +2016,7 @@ export type MyStandardPageOutputtotalArgs = {
 };
 
 export type MyStandardPageWhereInput = {
+  Burlp?: InputMaybe<RichTextWhereInput>;
   _and?: InputMaybe<Array<InputMaybe<MyStandardPageWhereInput>>>;
   _fulltext?: InputMaybe<SearchableStringFilterInput>;
   _metadata?: InputMaybe<IContentMetadataWhereInput>;

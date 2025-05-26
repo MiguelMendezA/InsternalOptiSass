@@ -1,0 +1,11 @@
+{
+  "key": "Dictionary",
+  "displayName": "Application labels dictionary",
+  "description": "A dictionary of labels that can be used by a frontend",
+  "baseType": "component",
+  "sortOrder": 100,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [],
+  "properties": {}
+}

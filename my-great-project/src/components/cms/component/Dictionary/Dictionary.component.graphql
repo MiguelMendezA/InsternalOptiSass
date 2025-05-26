@@ -1,0 +1,3 @@
+fragment DictionaryData on Dictionary {
+  empty: _metadata { key }
+}

@@ -1,0 +1,3 @@
+fragment HeaderBlockData on HeaderBlock {
+  empty: _metadata { key }
+}
