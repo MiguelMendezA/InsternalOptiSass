@@ -1,5 +1,8 @@
 import { type OptimizelyNextPage as CmsComponent } from "@remkoj/optimizely-cms-nextjs";
 import { BlankExperiencePageDataFragmentDoc, type BlankExperiencePageDataFragment } from "@/gql/graphql";
+
+// Define the BlankExperience component as a function
+const BlankExperience: CmsComponent<BlankExperiencePageDataFragment> = ({ data, children }) => {
     const componentName = 'BlankExperience'
     const componentInfo = ''
     return <div className="mx-auto px-2 container">
@@ -9,8 +12,9 @@ import { BlankExperiencePageDataFragmentDoc, type BlankExperiencePageDataFragmen
         { children && <div className="flex flex-col mt-4 mx-4">{ children }</div>}
     </div>
 }
+
 BlankExperience.displayName = "BlankExperience (Page/BlankExperience)"
-BlankExperience.getDataFragment = () => ['BlankExperienceData', BlankExperienceDataFragmentDoc]
+BlankExperience.getDataFragment = () => ['BlankExperienceData', BlankExperiencePageDataFragmentDoc]
 BlankExperience.getMetaData = async (contentLink, locale, client) => {
     const sdk = getSdk(client);
     // Add your metadata logic here
