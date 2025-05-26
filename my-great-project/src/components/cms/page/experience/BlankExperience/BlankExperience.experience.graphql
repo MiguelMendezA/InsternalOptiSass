@@ -1,5 +1,0 @@
-fragment BlankExperienceData on BlankExperience {
-  SeoSettings { ...PageSeoSettingsPropertyData }
-  BlankExperienceSeoSettings { ...PageSeoSettingsPropertyData }
-  ...ExperienceData
-}

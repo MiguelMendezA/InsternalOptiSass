@@ -1,9 +1,0 @@
-fragment WebsiteFooterData on WebsiteFooter {
-  FooterMainOfficeLocation { ...IContentListItem }
-  FooterFirstLinkList { ...NavigationMenuBlockPropertyData }
-  FooterSecondLinkList { ...NavigationMenuBlockPropertyData }
-  FooterThirdLinkList { ...NavigationMenuBlockPropertyData }
-  FooterLogo { ...ReferenceData }
-  FooterLogoAltText
-  FooterLegalLinks { ...LinkItemData }
-}

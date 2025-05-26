@@ -1,4 +1,0 @@
-fragment MyStandardPageData on MyStandardPage {
-  Header
-  Burlp { json, html }
-}
