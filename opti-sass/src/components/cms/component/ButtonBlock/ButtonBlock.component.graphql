@@ -1,0 +1,7 @@
+fragment ButtonBlockData on ButtonBlock {
+  text
+  link { ...LinkData }
+  className
+  buttonType
+  variant
+}

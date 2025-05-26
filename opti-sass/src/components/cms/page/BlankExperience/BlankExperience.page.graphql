@@ -1,0 +1,5 @@
+fragment BlankExperienceData on BlankExperience {
+  experienceTitle
+  experienceDescription { json, html }
+  experienceSettings { ...PageSeoSettingsPropertyData }
+}

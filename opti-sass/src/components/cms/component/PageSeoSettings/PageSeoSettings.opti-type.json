@@ -1,0 +1,23 @@
+{
+  "key": "PageSeoSettings",
+  "displayName": "Page SEO Settings",
+  "description": "",
+  "baseType": "component",
+  "sortOrder": 100,
+  "mayContainTypes": [],
+  "mediaFileExtensions": [],
+  "compositionBehaviors": [],
+  "properties": {
+    "metaTitle": {
+      "type": "string",
+      "format": "shortString",
+      "displayName": "Meta title",
+      "description": "",
+      "localized": true,
+      "required": false,
+      "group": "Information",
+      "sortOrder": 0,
+      "editorSettings": {}
+    }
+  }
+}

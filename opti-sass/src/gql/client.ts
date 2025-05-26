@@ -2,6 +2,19 @@ import type * as Schema from "./graphql";
 import type { GraphQLClient, RequestOptions } from 'graphql-request';
 import gql from 'graphql-tag';
 type GraphQLClientRequestHeaders = RequestOptions['requestHeaders'];
+export const CompositionNodeDataFragmentDoc = gql`
+    fragment CompositionNodeData on ICompositionNode {
+  name: displayName
+  layoutType: nodeType
+  type
+  key
+  template: displayTemplateKey
+  settings: displaySettings {
+    key
+    value
+  }
+}
+    `;
 export const LinkDataFragmentDoc = gql`
     fragment LinkData on ContentUrl {
   base
@@ -26,29 +39,6 @@ export const IContentDataFragmentDoc = gql`
     ...IContentInfo
   }
   _type: __typename
-}
-    `;
-export const PageDataFragmentDoc = gql`
-    fragment PageData on _IContent {
-  ...IContentData
-}
-    `;
-export const IContentListItemFragmentDoc = gql`
-    fragment IContentListItem on _IContent {
-  ...IContentData
-}
-    `;
-export const CompositionNodeDataFragmentDoc = gql`
-    fragment CompositionNodeData on ICompositionNode {
-  name: displayName
-  layoutType: nodeType
-  type
-  key
-  template: displayTemplateKey
-  settings: displaySettings {
-    key
-    value
-  }
 }
     `;
 export const BlockDataFragmentDoc = gql`
@@ -104,6 +94,21 @@ export const ExperienceDataFragmentDoc = gql`
   }
 }
     `;
+export const BlankExperienceDataFragmentDoc = gql`
+    fragment BlankExperienceData on BlankExperience {
+  ...ExperienceData
+}
+    `;
+export const PageDataFragmentDoc = gql`
+    fragment PageData on _IContent {
+  ...IContentData
+}
+    `;
+export const IContentListItemFragmentDoc = gql`
+    fragment IContentListItem on _IContent {
+  ...IContentData
+}
+    `;
 export const getContentByIdDocument = gql`
     query getContentById($key: String!, $version: String, $locale: [Locales!], $path: String, $domain: String) {
   content: _Content(
@@ -114,6 +119,7 @@ export const getContentByIdDocument = gql`
     items: item {
       ...BlockData
       ...PageData
+      ...BlankExperienceData
     }
   }
 }
@@ -121,7 +127,13 @@ export const getContentByIdDocument = gql`
 ${IContentDataFragmentDoc}
 ${IContentInfoFragmentDoc}
 ${LinkDataFragmentDoc}
-${PageDataFragmentDoc}`;
+${PageDataFragmentDoc}
+${BlankExperienceDataFragmentDoc}
+${ExperienceDataFragmentDoc}
+${CompositionNodeDataFragmentDoc}
+${CompositionComponentNodeDataFragmentDoc}
+${ElementDataFragmentDoc}
+${IElementDataFragmentDoc}`;
 export const getContentByPathDocument = gql`
     query getContentByPath($path: [String!]!, $locale: [Locales!], $siteId: String) {
   content: _Content(
@@ -132,13 +144,21 @@ export const getContentByPathDocument = gql`
     items: item {
       ...IContentData
       ...PageData
+      ...BlankExperienceData
     }
   }
 }
     ${IContentDataFragmentDoc}
 ${IContentInfoFragmentDoc}
 ${LinkDataFragmentDoc}
-${PageDataFragmentDoc}`;
+${PageDataFragmentDoc}
+${BlankExperienceDataFragmentDoc}
+${ExperienceDataFragmentDoc}
+${CompositionNodeDataFragmentDoc}
+${CompositionComponentNodeDataFragmentDoc}
+${BlockDataFragmentDoc}
+${ElementDataFragmentDoc}
+${IElementDataFragmentDoc}`;
 export const getContentTypeDocument = gql`
     query getContentType($key: String!, $version: String, $locale: [Locales!], $path: String, $domain: String) {
   content: _Content(
